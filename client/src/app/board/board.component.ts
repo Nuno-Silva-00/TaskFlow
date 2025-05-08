@@ -1,5 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { CardComponent } from './card/card.component';
+import { CardComponent } from './cards/card/card.component';
+
 import { BoardService } from './board.service';
 
 @Component({

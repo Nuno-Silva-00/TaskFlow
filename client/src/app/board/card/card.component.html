@@ -1,0 +1,14 @@
+<div class="card">
+  <p>card works!</p>
+  <p>{{ card().title }}</p>
+  <p>{{ card().description }}</p>
+  <p>{{ card().createDate | date : "short" }}</p>
+  <p>{{ card().endDate | date : "short" }}</p>
+  <p>{{ card().priority }}</p>
+  <p>{{ card().status }}</p>
+  <p>{{ card().assignedTo }}</p>
+  <p>{{ card().materialsUsed[0] }}</p>
+  <p>{{ card().hoursSpent }}</p>
+  <p>{{ card().comments[1].toString() }}</p>
+  <p>{{ card().lastUpdated | date : "short" }}</p>
+</div>

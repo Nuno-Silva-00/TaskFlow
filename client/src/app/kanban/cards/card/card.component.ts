@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { Card } from '../../shared/interfaces/card';
+import { Card } from '../../../shared/interfaces/card';
 import { DatePipe } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 

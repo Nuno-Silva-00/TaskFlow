@@ -4,7 +4,7 @@ import { Card } from '../shared/interfaces/card';
 @Injectable({
   providedIn: 'root',
 })
-export class BoardService {
+export class KanbanService {
   cards = signal<Card[]>([]);
 
   constructor() {

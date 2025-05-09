@@ -1,12 +1,13 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { CardComponent } from './cards/card/card.component';
+import { Component, inject } from '@angular/core';
 
 import { KanbanService } from './kanban.service';
+import { HeaderComponent } from './header/header.component';
+import { CardsComponent } from './cards/cards.component';
 
 @Component({
   selector: 'app-kanban',
   standalone: true,
-  imports: [CardComponent],
+  imports: [HeaderComponent, CardsComponent],
   templateUrl: './kanban.component.html',
   styleUrl: './kanban.component.css',
 })

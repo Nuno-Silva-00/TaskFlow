@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { SettingsComponent } from './settings/settings.component';
 import { KanbanComponent } from './kanban/kanban.component';
 import { StockComponent } from './stock/stock.component';
+import { AdminComponent } from './admin/admin.component';
 
 export const routes: Routes = [
   {
@@ -23,7 +24,7 @@ export const routes: Routes = [
   },
   {
     path: 'admin',
-    component: SettingsComponent,
+    component: AdminComponent,
   },
   {
     path: '**',

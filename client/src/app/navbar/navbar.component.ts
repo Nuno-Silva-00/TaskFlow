@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+
+import { AdminService } from '../admin/admin.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,30 +11,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {
-  config = [
-    {
-      name: 'Board',
-      path: '/board',
-      img: 'assets/kanban.svg',
-      imgAlt: 'Board icon',
-    },
-    {
-      name: 'Inventory',
-      path: '/inventory',
-      img: 'assets/inventory.svg',
-      imgAlt: 'Inventory icon',
-    },
-    {
-      name: 'Settings',
-      path: '/settings',
-      img: 'assets/settings.svg',
-      imgAlt: 'Settings icon',
-    },
-    {
-      name: 'Admin Panel',
-      path: '/admin',
-      img: 'assets/admin.svg',
-      imgAlt: 'Admin icon',
-    },
-  ];
+  AdminService = inject(AdminService);
+
+  tabs = this.AdminService.navActiveTabs;
 }

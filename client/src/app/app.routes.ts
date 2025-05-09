@@ -1,19 +1,32 @@
 import { Routes } from '@angular/router';
-import { CardComponent } from './board/cards/card/card.component';
 import { SettingsComponent } from './settings/settings.component';
-import { PathNotFoundComponent } from './path-not-found/path-not-found.component';
+import { KanbanComponent } from './kanban/kanban.component';
+import { StockComponent } from './stock/stock.component';
 
 export const routes: Routes = [
   {
     path: '',
-    component: CardComponent,
+    redirectTo: 'board',
+    pathMatch: 'full',
   },
   {
-    path: '/settings',
+    path: 'board',
+    component: KanbanComponent,
+  },
+  {
+    path: 'inventory',
+    component: StockComponent,
+  },
+  {
+    path: 'settings',
+    component: SettingsComponent,
+  },
+  {
+    path: 'admin',
     component: SettingsComponent,
   },
   {
     path: '**',
-    component: PathNotFoundComponent,
+    redirectTo: 'board',
   },
 ];

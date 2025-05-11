@@ -3,6 +3,7 @@ import { SettingsComponent } from './settings/settings.component';
 import { KanbanComponent } from './kanban/kanban.component';
 import { StockComponent } from './stock/stock.component';
 import { AdminComponent } from './admin/admin.component';
+import { AuthComponent } from './auth/auth.component';
 
 export const routes: Routes = [
   {
@@ -25,6 +26,10 @@ export const routes: Routes = [
   {
     path: 'admin',
     component: AdminComponent,
+  },
+  {
+    path: 'auth',
+    component: AuthComponent,
   },
   {
     path: '**',

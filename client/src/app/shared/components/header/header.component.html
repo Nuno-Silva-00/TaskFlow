@@ -1,0 +1,34 @@
+<div
+  class="p-4 pl-8 pr-8 flex justify-between border-b-2 border-gray-100 items-center"
+>
+  <input
+    type="text"
+    class="p-2 rounded-md bg-gray-200 no-border focus:outline-0 font-light text-gray-900"
+    placeholder="Search..."
+  />
+
+  <div class="relative mt-2 md:mt-0">
+    <button
+      class="rounded-full bg-amber-700 hover:bg-amber-600 w-12 h-12 flex items-center justify-center"
+      (click)="toggleDropdown()"
+    >
+      <p class="font-medium text-white">JS</p>
+    </button>
+
+    <div
+      [ngClass]="
+        isDropdownOpen
+          ? 'transition ease-out duration-300 transform opacity-100 scale-100'
+          : 'transition ease-in duration-75 transform opacity-0 scale-95'
+      "
+      class="md:absolute right-0 mt-2 w-48 bg-white rounded-lg border-2 border-gray-100"
+    >
+      <!-- <a
+        class="block px-4 py-2 text-gray-900 hover:bg-gray-200"
+        routerLink="/settings"
+        >Settings</a
+      > -->
+      <a class="block px-4 py-2 text-gray-900 hover:bg-gray-200" (click)="logout()">Sign Out</a>
+    </div>
+  </div>
+</div>

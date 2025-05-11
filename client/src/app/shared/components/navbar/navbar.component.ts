@@ -1,7 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-
-import { AdminService } from '../admin/admin.service';
+import { AdminService } from '../../../dashboard/admin/admin.service';
 
 @Component({
   selector: 'app-navbar',

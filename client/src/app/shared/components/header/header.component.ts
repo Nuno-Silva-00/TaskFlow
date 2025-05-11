@@ -1,11 +1,11 @@
 import { NgClass } from '@angular/common';
 import { Component, HostListener, inject } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterLink, NgClass],
+  imports: [NgClass],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })

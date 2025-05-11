@@ -1,5 +1,5 @@
 import { Injectable, signal } from '@angular/core';
-import { Card } from '../shared/interfaces/card';
+import { Card } from '../../shared/interfaces/card';
 
 @Injectable({
   providedIn: 'root',
@@ -52,7 +52,7 @@ export class KanbanService {
 
   deleteCard(cardId: number) {
     this.cards.update((currentCards) =>
-      currentCards.filter((card) => card.id !== cardId)
+      currentCards.filter((card) => card.id !== cardId),
     );
   }
 }

@@ -1,6 +1,7 @@
 import { NgClass } from '@angular/common';
-import { Component, HostListener, inject } from '@angular/core';
+import { Component, HostListener, inject, signal } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../../../auth/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -11,10 +12,12 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent {
   router = inject(Router);
-  isDropdownOpen = false;
+  authService = inject(AuthService);
+
+  isDropdownOpen = signal(false);
 
   toggleDropdown() {
-    this.isDropdownOpen = !this.isDropdownOpen;
+    this.isDropdownOpen.update((prev) => !prev);
   }
 
   @HostListener('document:click', ['$event'])
@@ -22,14 +25,12 @@ export class HeaderComponent {
     const target = event.target as HTMLElement;
     const clickInside = target.closest('.relative');
     if (!clickInside) {
-      this.isDropdownOpen = false;
+      this.isDropdownOpen.set(false);
     }
   }
 
   logout() {
-    // Implement your logout logic here
-    console.log('Logout clicked');
-    this.router.navigate(['/auth']);
-    this.isDropdownOpen = false;
+    this.authService.logOut();
+    this.isDropdownOpen.set(false);
   }
 }

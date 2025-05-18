@@ -1,5 +1,5 @@
 import { inject } from '@angular/core';
-import { CanMatchFn, Router } from '@angular/router';
+import { CanMatchFn, RedirectCommand, Router } from '@angular/router';
 import { AuthService } from './auth.service';
 
 export const authGuard: CanMatchFn = (route, segments) => {
@@ -8,5 +8,5 @@ export const authGuard: CanMatchFn = (route, segments) => {
 
   if (authService.user) return true;
 
-  return router.navigate(['/auth']);
+  return new RedirectCommand(router.parseUrl('/auth'));
 };

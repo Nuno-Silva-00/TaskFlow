@@ -5,6 +5,7 @@ import { StockComponent } from './dashboard/stock/stock.component';
 import { AdminComponent } from './dashboard/admin/admin.component';
 import { AuthComponent } from './auth/auth.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { authGuard } from './auth/auth.guard';
 
 export const routes: Routes = [
   {
@@ -19,7 +20,9 @@ export const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
+    canMatch: [authGuard],
     children: [
+      { path: '', redirectTo: 'board', pathMatch: 'full' },
       {
         path: 'board',
         component: KanbanComponent,

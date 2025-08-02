@@ -1,6 +1,7 @@
 services:
   database:
-    image: postgres
+    container_name: postgres
+    image: postgres:17.0
     restart: always
     # set shared memory limit when using docker compose
     shm_size: 128mb
@@ -14,6 +15,7 @@ services:
       - 5432:5432
 
   adminer:
+    container_name: adminer
     image: adminer
     restart: always
     ports:
